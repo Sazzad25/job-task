@@ -1,44 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Table2 = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("tableData.json")
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
   return (
-    <div className="overflow-x-auto w-full mt-10 p-5">
-      <h2 className="text-2xl text-center">Table No 2</h2>
-      <table className="table table-zebra w-full">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email Address</th>
-            <th>Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((dat) => (
-            <tr>
-              <td>
-                <div className="flex items-center space-x-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img src={dat.person.avatar} alt="" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">{dat.person.name}</div>
-                  </div>
-                </div>
-              </td>
-              <td>{dat.email}</td>
-              <td>{dat.role}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="grid grid-cols-1 lg:grid-cols-4 mt-4 p-4">
+      <div className="card w-96  bg-base-100 text-neutral-content mr-8">
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-black">Software Skills</h2>
+          <div className="card-actions justify-end">
+          <button className="btn">Rhino</button>
+          <button className="btn">Sketchup</button>
+          </div>
+          <div className="card-actions justify-end">
+         
+          <button className="btn">Vectorworks</button>
+          </div>
+        </div>
+      </div>
+      <div className="card w-96 bg-base-100 text-neutral-content ml-16 mr-15">
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-black">Experience</h2>
+          <h2 className="text-black text-2xl">Associate</h2>
+          <h2 className="text-black text-2xl">3+ years</h2>
+        </div>
+      </div>
+      <div className="card w-96 bg-base-100 text-neutral-content">
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-black">$  Rate</h2>
+          <h2 className="text-black text-2xl">$55-$65/hour</h2>
+        </div>
+      </div>
+      <div className="card w-96 bg-base-100 text-neutral-content ml-16">
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-black">Location</h2>
+          <h2 className="text-black text-2xl">Bozeman, MT</h2>
+          <h2 className="text-black text-2xl">USA</h2>
+          <button className="btn btn-secondary">On-Site</button>
+        </div>
+      </div>
     </div>
   );
 };

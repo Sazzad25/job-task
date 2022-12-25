@@ -1,18 +1,24 @@
-import React from "react";
+import React from 'react';
+import image5 from "../src/Images/image5.png";
+import Blue from "../src/Images/Blue.png";
 
 const Navbar = () => {
   return (
-    <div className="mt-10 p-5">
-      <div className="navbar bg-neutral">
-        <div className="navbar-start"></div>
-        <div className="navbar-center">
-          <h2 className="btn btn-ghost normal-case text-xl text-white">
-            Job Task
-          </h2>
-        </div>
-        <div className="navbar-end"></div>
-      </div>
-    </div>
+    <div className="navbar bg-base-100">
+  <div className="flex-1">
+    <img className='mr-3' src={Blue} alt="" />
+    <img src={image5} alt="" />
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+      <li><a>Candidates</a></li>
+      <li><a>Companies</a></li>
+      <li><a>Jobs</a></li>
+      <li><a>Notifications</a></li>
+      <li><a>User Name</a></li>
+    </ul>
+  </div>
+</div>
   );
 };
 
